@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body style="background-image: url('9-RPS-example.png')">
+
+    <script type="text/javascript">
+        window.addEventListener('load', function() {
+            alert("Welcome to RPS!!! You Know what Beats what. Press Ok to play. This is best of 7");
+            const computerchoice = ["r", "p", "s"];
+
+            let wins = 0;
+            let losses = 0;
+            let ties = 0;
+
+            for (let i = 0; i < 7; i++) {
+
+                computerguess = computerchoice[Math.floor(Math.random() * computerchoice.length)];
+
+                console.log(computerguess);
+
+                var userguess = prompt("Choose r, p , or s. Sorry no Spocks allowed ");
+                console.log(userguess);
+                userguess = userguess.toLowerCase();
+                if (userguess === "r" || userguess === "p" || userguess === "s") {
+
+                    if ((userguess === "r" && computerguess === "s") ||
+                        (userguess === "p" && computerguess === "r") ||
+                        (userguess === "s" && computerguess === "p")) {
+                        wins++;
+                        alert("The Computer Guessed " + computerguess + " You Guessed " + userguess + " You Won " + wins + " Time(s) ")
+                    } else if ((userguess === "r" && computerguess === "p") ||
+                        (userguess === "p" && computerguess === "s") ||
+                        (userguess === "s" && computerguess === "r")) {
+                        losses++;
+                        alert("The Computer Guessed " + computerguess + " You Guessed " + userguess + " You lost " + losses + " Time(s) ")
+                    } else {
+                        ties++;
+                        alert("The Computer Guessed " + computerguess + " You Guessed " + userguess + " You Tied " + ties + " Time(s) ")
+                    }
+                } else
+                    alert("You did not guess r, p or s...Dummy ")
+            }
+        });
+        alert("You won " + wins + " time(s)," + " You lost " + losses + " time(s)," + " You tied " + ties + " time(s).")
+    </script>
+
+</body>
+
+</html>
