@@ -1,2 +1,2 @@
 # RPS-APP
-This a rock paper scissor program I created using Javascript
+This is a rock paper scissor program I created using Javascript
